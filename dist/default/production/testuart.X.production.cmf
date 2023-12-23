@@ -1,0 +1,368 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production/testuart.X.production.o
+cinit CODE 0 F F 2 2 1
+idloc IDLOC 5 2000 2000 4 2 1
+text1 CODE 0 40 40 22 2 1
+text2 CODE 0 D8 D8 19 2 1
+text3 CODE 0 108 108 A 2 1
+text4 CODE 0 BD BD 1B 2 1
+text5 CODE 0 62 62 21 2 1
+text6 CODE 0 A1 A1 1C 2 1
+text7 CODE 0 F1 F1 17 2 1
+text8 CODE 0 112 112 A 2 1
+maintext CODE 0 11 11 2F 2 1
+cstackCOMMON COMMON 1 70 70 C 1 1
+cstackBANK0 BANK0 1 20 20 B 1 1
+intentry CODE 0 4 4 A 2 1
+strings STRING 0 83 83 1E 2 1
+config CONFIG 4 2007 2007 1 2 1
+$/tmp/xcXnKLElC.o
+idloc IDLOC 5 2000 2000 4 2 1
+reset_vec CODE 0 0 0 1 2 1
+end_init CODE 0 E E 1 2 1
+config CONFIG 4 2007 2007 1 2 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 2B-6F 1
+RAM A0-EF 1
+RAM 120-14F 1
+BANK0 2B-6F 1
+BANK1 A0-EF 1
+BANK2 120-14F 1
+CONST 1-3 2
+CONST 11C-7FF 2
+ENTRY 1-3 2
+ENTRY 11C-7FF 2
+CODE 1-3 2
+CODE 11C-7FF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-1EF 1
+COMMON 7C-7D 1
+EEDATA 2100-217F 2
+STRCODE 1-3 2
+STRCODE 11C-7FF 2
+STRING 1-3 2
+STRING 11C-7FF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/testuart.X.production.o
+F cinit CODE >361:/tmp/xcXcnLLPO.s
+F cinit CODE >364:/tmp/xcXcnLLPO.s
+F cinit CODE >370:/tmp/xcXcnLLPO.s
+F cinit CODE >372:/tmp/xcXcnLLPO.s
+10 cinit CODE >373:/tmp/xcXcnLLPO.s
+4 intentry CODE >72:/home/anar/MPLABXProjects/testuart.X/testuart.c
+112 text8 CODE >50:/home/anar/MPLABXProjects/testuart.X/testuart.c
+113 text8 CODE >52:/home/anar/MPLABXProjects/testuart.X/testuart.c
+119 text8 CODE >53:/home/anar/MPLABXProjects/testuart.X/testuart.c
+11B text8 CODE >57:/home/anar/MPLABXProjects/testuart.X/testuart.c
+F1 text7 CODE >4:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+F2 text7 CODE >8:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+F4 text7 CODE >9:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+F5 text7 CODE >10:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+F9 text7 CODE >9:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+FD text7 CODE >9:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+101 text7 CODE >12:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+107 text7 CODE >13:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+A1 text6 CODE >60:/home/anar/MPLABXProjects/testuart.X/testuart.c
+A2 text6 CODE >62:/home/anar/MPLABXProjects/testuart.X/testuart.c
+A5 text6 CODE >63:/home/anar/MPLABXProjects/testuart.X/testuart.c
+AC text6 CODE >63:/home/anar/MPLABXProjects/testuart.X/testuart.c
+B4 text6 CODE >63:/home/anar/MPLABXProjects/testuart.X/testuart.c
+B8 text6 CODE >63:/home/anar/MPLABXProjects/testuart.X/testuart.c
+BC text6 CODE >67:/home/anar/MPLABXProjects/testuart.X/testuart.c
+62 text5 CODE >72:/home/anar/MPLABXProjects/testuart.X/testuart.c
+62 text5 CODE >74:/home/anar/MPLABXProjects/testuart.X/testuart.c
+68 text5 CODE >76:/home/anar/MPLABXProjects/testuart.X/testuart.c
+69 text5 CODE >78:/home/anar/MPLABXProjects/testuart.X/testuart.c
+6F text5 CODE >79:/home/anar/MPLABXProjects/testuart.X/testuart.c
+71 text5 CODE >80:/home/anar/MPLABXProjects/testuart.X/testuart.c
+75 text5 CODE >82:/home/anar/MPLABXProjects/testuart.X/testuart.c
+78 text5 CODE >86:/home/anar/MPLABXProjects/testuart.X/testuart.c
+BD text4 CODE >25:/home/anar/MPLABXProjects/testuart.X/testuart.c
+BD text4 CODE >27:/home/anar/MPLABXProjects/testuart.X/testuart.c
+C0 text4 CODE >28:/home/anar/MPLABXProjects/testuart.X/testuart.c
+C1 text4 CODE >30:/home/anar/MPLABXProjects/testuart.X/testuart.c
+C2 text4 CODE >31:/home/anar/MPLABXProjects/testuart.X/testuart.c
+C3 text4 CODE >32:/home/anar/MPLABXProjects/testuart.X/testuart.c
+C5 text4 CODE >33:/home/anar/MPLABXProjects/testuart.X/testuart.c
+C6 text4 CODE >34:/home/anar/MPLABXProjects/testuart.X/testuart.c
+C9 text4 CODE >35:/home/anar/MPLABXProjects/testuart.X/testuart.c
+CA text4 CODE >36:/home/anar/MPLABXProjects/testuart.X/testuart.c
+CB text4 CODE >37:/home/anar/MPLABXProjects/testuart.X/testuart.c
+CE text4 CODE >38:/home/anar/MPLABXProjects/testuart.X/testuart.c
+CF text4 CODE >39:/home/anar/MPLABXProjects/testuart.X/testuart.c
+D0 text4 CODE >40:/home/anar/MPLABXProjects/testuart.X/testuart.c
+D3 text4 CODE >41:/home/anar/MPLABXProjects/testuart.X/testuart.c
+D6 text4 CODE >43:/home/anar/MPLABXProjects/testuart.X/testuart.c
+D7 text4 CODE >46:/home/anar/MPLABXProjects/testuart.X/testuart.c
+108 text3 CODE >50:/home/anar/MPLABXProjects/testuart.X/testuart.c
+10B text3 CODE >52:/home/anar/MPLABXProjects/testuart.X/testuart.c
+10F text3 CODE >53:/home/anar/MPLABXProjects/testuart.X/testuart.c
+111 text3 CODE >57:/home/anar/MPLABXProjects/testuart.X/testuart.c
+D8 text2 CODE >4:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+DB text2 CODE >8:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+DD text2 CODE >9:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+DE text2 CODE >10:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+E2 text2 CODE >9:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+E6 text2 CODE >9:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+EA text2 CODE >12:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+F0 text2 CODE >13:/opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
+40 text1 CODE >60:/home/anar/MPLABXProjects/testuart.X/testuart.c
+43 text1 CODE >62:/home/anar/MPLABXProjects/testuart.X/testuart.c
+46 text1 CODE >63:/home/anar/MPLABXProjects/testuart.X/testuart.c
+4F text1 CODE >63:/home/anar/MPLABXProjects/testuart.X/testuart.c
+59 text1 CODE >63:/home/anar/MPLABXProjects/testuart.X/testuart.c
+5D text1 CODE >63:/home/anar/MPLABXProjects/testuart.X/testuart.c
+61 text1 CODE >67:/home/anar/MPLABXProjects/testuart.X/testuart.c
+11 maintext CODE >91:/home/anar/MPLABXProjects/testuart.X/testuart.c
+11 maintext CODE >92:/home/anar/MPLABXProjects/testuart.X/testuart.c
+14 maintext CODE >93:/home/anar/MPLABXProjects/testuart.X/testuart.c
+15 maintext CODE >94:/home/anar/MPLABXProjects/testuart.X/testuart.c
+18 maintext CODE >95:/home/anar/MPLABXProjects/testuart.X/testuart.c
+19 maintext CODE >96:/home/anar/MPLABXProjects/testuart.X/testuart.c
+1A maintext CODE >97:/home/anar/MPLABXProjects/testuart.X/testuart.c
+1C maintext CODE >102:/home/anar/MPLABXProjects/testuart.X/testuart.c
+2B maintext CODE >104:/home/anar/MPLABXProjects/testuart.X/testuart.c
+2D maintext CODE >106:/home/anar/MPLABXProjects/testuart.X/testuart.c
+2F maintext CODE >108:/home/anar/MPLABXProjects/testuart.X/testuart.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 0 0 ABS 0 - dist/default/production/testuart.X.production.o
+__Hspace_0 11C 0 ABS 0 - -
+__Hspace_1 7C 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Hspace_4 400F 0 ABS 0 - -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__end_ofi1_SendByteSerially 238 0 CODE 0 text8 dist/default/production/testuart.X.production.o
+_SendString 80 0 CODE 0 text1 dist/default/production/testuart.X.production.o
+__Hstrings 0 0 ABS 0 strings -
+_BRGH 4C2 0 ABS 0 - dist/default/production/testuart.X.production.o
+_CREN C4 0 ABS 0 - dist/default/production/testuart.X.production.o
+_PEIE 5E 0 ABS 0 - dist/default/production/testuart.X.production.o
+_RCIE 465 0 ABS 0 - dist/default/production/testuart.X.production.o
+_RCIF 65 0 ABS 0 - dist/default/production/testuart.X.production.o
+_SPEN C7 0 ABS 0 - dist/default/production/testuart.X.production.o
+_SREN C5 0 ABS 0 - dist/default/production/testuart.X.production.o
+_SYNC 4C4 0 ABS 0 - dist/default/production/testuart.X.production.o
+_TX9D 4C0 0 ABS 0 - dist/default/production/testuart.X.production.o
+_TXEN 4C5 0 ABS 0 - dist/default/production/testuart.X.production.o
+_TXIE 464 0 ABS 0 - dist/default/production/testuart.X.production.o
+_TXIF 64 0 ABS 0 - dist/default/production/testuart.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXnKLElC.o
+_main 22 0 CODE 0 maintext dist/default/production/testuart.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production/testuart.X.production.o
+start 1C 0 CODE 0 init /tmp/xcXnKLElC.o
+i1strlen@cp 74 0 COMMON 1 cstackCOMMON dist/default/production/testuart.X.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+i1_SendByteSerially 224 0 CODE 0 text8 dist/default/production/testuart.X.production.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xcXnKLElC.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xcXnKLElC.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xcXnKLElC.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xcXnKLElC.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xcXnKLElC.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xcXnKLElC.o
+wtemp0 7E 0 ABS 0 - dist/default/production/testuart.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+__end_of_SendString C4 0 CODE 0 text1 dist/default/production/testuart.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+i1strlen@s 73 0 COMMON 1 cstackCOMMON dist/default/production/testuart.X.production.o
+?_strlen 20 0 BANK0 1 cstackBANK0 dist/default/production/testuart.X.production.o
+___stackhi 0 0 ABS 0 - /tmp/xcXnKLElC.o
+___stacklo 0 0 ABS 0 - /tmp/xcXnKLElC.o
+_SendByteSerially 210 0 CODE 0 text3 dist/default/production/testuart.X.production.o
+start_initialization 1E 0 CODE 0 cinit dist/default/production/testuart.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/testuart.X.production.o
+_TRISB1 431 0 ABS 0 - dist/default/production/testuart.X.production.o
+_TRISB2 432 0 ABS 0 - dist/default/production/testuart.X.production.o
+___int_sp 0 0 STACK 2 stack /tmp/xcXnKLElC.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 BANK3 1 bank3 -
+__Hcinit 22 0 CODE 0 cinit -
+__end_of_strlen 1E2 0 CODE 0 text2 dist/default/production/testuart.X.production.o
+__Hidloc 4008 0 IDLOC 5 idloc -
+__Hstack 0 0 STACK 2 stack -
+__stringbase 110 0 STRING 0 strings dist/default/production/testuart.X.production.o
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 4 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 BANK3 1 bank3 -
+__Lcinit 1E 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 5 idloc -
+__Lstack 0 0 STACK 2 stack -
+__end_of_SendByteSerially 224 0 CODE 0 text3 dist/default/production/testuart.X.production.o
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 1C 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 1C 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+i1_SendString 142 0 CODE 0 text6 dist/default/production/testuart.X.production.o
+_GIE 5F 0 ABS 0 - dist/default/production/testuart.X.production.o
+_RB5 35 0 ABS 0 - dist/default/production/testuart.X.production.o
+_RX9 C6 0 ABS 0 - dist/default/production/testuart.X.production.o
+_TX9 4C6 0 ABS 0 - dist/default/production/testuart.X.production.o
+__S0 11C 0 ABS 0 - -
+__S1 7C 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_isr C4 0 CODE 0 text5 dist/default/production/testuart.X.production.o
+saved_w 7E 0 ABS 0 - dist/default/production/testuart.X.production.o
+__end_of_isr 106 0 CODE 0 text5 dist/default/production/testuart.X.production.o
+__Lintentry 8 0 CODE 0 intentry -
+__stringtab 106 0 STRING 0 strings dist/default/production/testuart.X.production.o
+i1SendString@str 75 0 COMMON 1 cstackCOMMON dist/default/production/testuart.X.production.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXnKLElC.o
+i1SendByteSerially@Byte 70 0 COMMON 1 cstackCOMMON dist/default/production/testuart.X.production.o
+strlen@s 23 0 BANK0 1 cstackBANK0 dist/default/production/testuart.X.production.o
+i1_strlen 1E2 0 CODE 0 text7 dist/default/production/testuart.X.production.o
+SendString@str 27 0 BANK0 1 cstackBANK0 dist/default/production/testuart.X.production.o
+_InitUART 17A 0 CODE 0 text4 dist/default/production/testuart.X.production.o
+strlen@cp 24 0 BANK0 1 cstackBANK0 dist/default/production/testuart.X.production.o
+SendString@i 25 0 BANK0 1 cstackBANK0 dist/default/production/testuart.X.production.o
+__end_ofi1_strlen 210 0 CODE 0 text7 dist/default/production/testuart.X.production.o
+__pmaintext 22 0 CODE 0 maintext dist/default/production/testuart.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 0 0 CONFIG 4 config -
+__end_of_InitUART 1B0 0 CODE 0 text4 dist/default/production/testuart.X.production.o
+__end_ofi1_SendString 17A 0 CODE 0 text6 dist/default/production/testuart.X.production.o
+_strlen 1B0 0 CODE 0 text2 dist/default/production/testuart.X.production.o
+SendByteSerially@Byte 20 0 BANK0 1 cstackBANK0 dist/default/production/testuart.X.production.o
+__end_of__stringtab 112 0 STRING 0 strings dist/default/production/testuart.X.production.o
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__Lspace_4 0 0 ABS 0 - -
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 1C 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization 1E 0 CODE 0 cinit dist/default/production/testuart.X.production.o
+__Hintentry 1C 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__ptext1 80 0 CODE 0 text1 dist/default/production/testuart.X.production.o
+__ptext2 1B0 0 CODE 0 text2 dist/default/production/testuart.X.production.o
+__ptext3 210 0 CODE 0 text3 dist/default/production/testuart.X.production.o
+__ptext4 17A 0 CODE 0 text4 dist/default/production/testuart.X.production.o
+__ptext5 C4 0 CODE 0 text5 dist/default/production/testuart.X.production.o
+__ptext6 142 0 CODE 0 text6 dist/default/production/testuart.X.production.o
+__ptext7 1E2 0 CODE 0 text7 dist/default/production/testuart.X.production.o
+__ptext8 224 0 CODE 0 text8 dist/default/production/testuart.X.production.o
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+i1SendString@i 76 0 COMMON 1 cstackCOMMON dist/default/production/testuart.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__end_of__initialization 1E 0 CODE 0 cinit dist/default/production/testuart.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+?i1_strlen 70 0 COMMON 1 cstackCOMMON dist/default/production/testuart.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext -
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/testuart.X.production.o
+__Hend_init 1E 0 CODE 0 end_init -
+__end_of_main 80 0 CODE 0 maintext dist/default/production/testuart.X.production.o
+_RCREG 1A 0 ABS 0 - dist/default/production/testuart.X.production.o
+_SPBRG 99 0 ABS 0 - dist/default/production/testuart.X.production.o
+_TRISB 86 0 ABS 0 - dist/default/production/testuart.X.production.o
+_TXREG 19 0 ABS 0 - dist/default/production/testuart.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production/testuart.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production/testuart.X.production.o
+__initialization 1E 0 CODE 0 cinit dist/default/production/testuart.X.production.o
+__pstrings 106 0 STRING 0 strings dist/default/production/testuart.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text6 0 A1 142 7B 2
+cstackCOMMON 1 70 70 C 1
+cstackBANK0 1 20 20 B 1
+intentry 0 4 8 7F 2
+reset_vec 0 0 0 1 2
+strings 0 83 106 1E 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
