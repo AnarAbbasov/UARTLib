@@ -1240,24 +1240,33 @@ void SendByteSerially(unsigned char Byte)
 
 void SendString(char * str)
 {
-    for (int i=0;i<strlen(str);i++)
+    for (int i=0;i<=strlen(str);i++)
             SendByteSerially(str[i]);
 
 
 
 }
 
+typedef struct CMD{
 
+    char cmd[5];
+    int position;
+} commanddata;
 
-
+commanddata cmdata;
 void __attribute__((picinterrupt(("")))) isr(void)
 {
   if(RCIF)
   {
    RB5=1;
+    if(cmdata.position>5){
+       cmdata.position=0;}
+    else{
+   cmdata.cmd[cmdata.position]=RCREG;
 
-   if (RCREG=='A')
-       SendString("palavik");
+   cmdata.position++;
+    }
+
   SendByteSerially(RCREG);
 
      RB5=0;
@@ -1272,6 +1281,7 @@ void __attribute__((picinterrupt(("")))) isr(void)
 void main(void) {
    TRISB=0;
   InitUART();
+  cmdata.position=0;
    RB5=0;
     GIE=1;
   PEIE=1;
@@ -1281,10 +1291,13 @@ void main(void) {
 
 
          _delay((unsigned long)((1000)*(4000000/4000.0)));
+         if (cmdata.position==5)
+            SendByteSerially('F');
 
-    SendByteSerially('S');
 
-    SendByteSerially('\n');
+
+       SendString(cmdata.cmd);
+        SendByteSerially('\n');
 
      _delay((unsigned long)((1000)*(4000000/4000.0)));
 

@@ -7,7 +7,6 @@
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 /opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
-[v i1_strlen strlen `(ui  1 e 2 0 ]
 "4 /opt/microchip/xc8/v2.40/pic/sources/c90/common/Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 /opt/microchip/xc8/v2.40/pic/sources/c90/pic/__eeprom.c
@@ -21,10 +20,9 @@
 [v i1_SendByteSerially SendByteSerially `(v  1 e 1 0 ]
 "60
 [v _SendString SendString `(v  1 e 1 0 ]
-[v i1_SendString SendString `(v  1 e 1 0 ]
-"72
+"76
 [v _isr isr `II(v  1 e 1 0 ]
-"91
+"100
 [v _main main `(v  1 e 1 0 ]
 "754 /opt/microchip/mplabx/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8/pic/include/proc/pic16f628a.h
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
@@ -70,33 +68,30 @@
 [v _TXIE TXIE `VEb  1 e 0 @1124 ]
 "1676
 [v _TXIF TXIF `VEb  1 e 0 @100 ]
-"91 /home/anar/MPLABXProjects/testuart.X/testuart.c
+[s S43 CMD 7 `[5]uc 1 cmd 5 0 `i 1 position 2 5 ]
+"75 /home/anar/MPLABXProjects/testuart.X/testuart.c
+[v _cmdata cmdata `S43  1 e 7 0 ]
+"100
 [v _main main `(v  1 e 1 0 ]
 {
-"116
+"129
 } 0
 "60
 [v _SendString SendString `(v  1 e 1 0 ]
 {
-[v SendString@str str `*.24uc  1 a 1 wreg ]
 "62
 [v SendString@i i `i  1 a 2 5 ]
 "60
-[v SendString@str str `*.24uc  1 a 1 wreg ]
-"62
-[v SendString@str str `*.24uc  1 a 1 7 ]
+[v SendString@str str `*.26uc  1 p 2 0 ]
 "67
 } 0
 "4 /opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 {
-[v strlen@s s `*.24DCuc  1 a 1 wreg ]
 "6
-[v strlen@cp cp `*.24DCuc  1 a 1 4 ]
+[v strlen@cp cp `*.26DCuc  1 a 2 7 ]
 "4
-[v strlen@s s `*.24DCuc  1 a 1 wreg ]
-"8
-[v strlen@s s `*.24DCuc  1 a 1 3 ]
+[v strlen@s s `*.26DCuc  1 p 2 5 ]
 "13
 } 0
 "50 /home/anar/MPLABXProjects/testuart.X/testuart.c
@@ -104,7 +99,7 @@
 {
 [v SendByteSerially@Byte Byte `uc  1 a 1 wreg ]
 [v SendByteSerially@Byte Byte `uc  1 a 1 wreg ]
-[v SendByteSerially@Byte Byte `uc  1 a 1 0 ]
+[v SendByteSerially@Byte Byte `uc  1 a 1 5 ]
 "57
 } 0
 "25
@@ -112,36 +107,12 @@
 {
 "46
 } 0
-"72
+"76
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"86
+"95
 } 0
-"60
-[v i1_SendString SendString `(v  1 e 1 0 ]
-{
-[v i1SendString@str str `*.24uc  1 a 1 wreg ]
-"62
-[v i1SendString@i i `i  1 a 2 6 ]
-"60
-[v i1SendString@str str `*.24uc  1 a 1 wreg ]
-"62
-[v i1SendString@str str `*.24uc  1 a 1 5 ]
-"67
-} 0
-"4 /opt/microchip/xc8/v2.40/pic/sources/c90/common/strlen.c
-[v i1_strlen strlen `(ui  1 e 2 0 ]
-{
-[v i1strlen@s s `*.24DCuc  1 a 1 wreg ]
-"6
-[v i1strlen@cp cp `*.24DCuc  1 a 1 4 ]
-"4
-[v i1strlen@s s `*.24DCuc  1 a 1 wreg ]
-"8
-[v i1strlen@s s `*.24DCuc  1 a 1 3 ]
-"13
-} 0
-"50 /home/anar/MPLABXProjects/testuart.X/testuart.c
+"50
 [v i1_SendByteSerially SendByteSerially `(v  1 e 1 0 ]
 {
 [v i1SendByteSerially@Byte Byte `uc  1 a 1 wreg ]

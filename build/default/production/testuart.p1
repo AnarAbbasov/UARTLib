@@ -50,6 +50,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56 /opt/microchip/xc8/v2.40/pic/include/c90/string.h
 [; ;/opt/microchip/xc8/v2.40/pic/include/c90/string.h: 56: extern size_t strlen(const char *);
 [v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
+"69 testuart.c
+[; ;testuart.c: 69: typedef struct CMD{
+[s S61 `uc -> 5 `i `i 1 ]
+[n S61 CMD cmd position ]
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
 "1520 /opt/microchip/mplabx/v6.05/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8/pic/include/proc/pic16f628a.h
@@ -300,7 +304,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;testuart.c: 61: {
 [f ]
 "62
-[; ;testuart.c: 62:     for (int i=0;i<strlen(str);i++)
+[; ;testuart.c: 62:     for (int i=0;i<=strlen(str);i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -311,107 +315,135 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _SendByteSerially (1 -> *U + _str * -> _i `x -> -> # *U _str `i `x `uc ]
 [e ++ _i -> 1 `i ]
 [e :U 60 ]
-[e $ < -> _i `ui ( _strlen (1 -> _str `*Cuc 57  ]
+[e $ <= -> _i `ui ( _strlen (1 -> _str `*Cuc 57  ]
 [e :U 58 ]
 }
 "67
 [; ;testuart.c: 67: }
 [e :UE 56 ]
 }
+"75
+[; ;testuart.c: 75: commanddata cmdata;
+[v _cmdata `S61 ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"72
-[; ;testuart.c: 72: void __attribute__((picinterrupt(("")))) isr(void)
+"76
+[; ;testuart.c: 76: void __attribute__((picinterrupt(("")))) isr(void)
 [v _isr `(v ~T1 @X0 1 ef ]
-"73
-[; ;testuart.c: 73: {
+"77
+[; ;testuart.c: 77: {
 {
 [e :U _isr ]
 [f ]
-"74
-[; ;testuart.c: 74:   if(RCIF)
-[e $ ! _RCIF 62  ]
-"75
-[; ;testuart.c: 75:   {
-{
-"76
-[; ;testuart.c: 76:    RB5=1;
-[e = _RB5 -> -> 1 `i `b ]
 "78
-[; ;testuart.c: 78:    if (RCREG=='A')
-[e $ ! == -> _RCREG `ui -> 65 `ui 63  ]
+[; ;testuart.c: 78:   if(RCIF)
+[e $ ! _RCIF 63  ]
 "79
-[; ;testuart.c: 79:        SendString("palavik");
-[e ( _SendString (1 :s 1C ]
-[e :U 63 ]
+[; ;testuart.c: 79:   {
+{
 "80
-[; ;testuart.c: 80:   SendByteSerially(RCREG);
-[e ( _SendByteSerially (1 _RCREG ]
+[; ;testuart.c: 80:    RB5=1;
+[e = _RB5 -> -> 1 `i `b ]
+"81
+[; ;testuart.c: 81:     if(cmdata.position>5){
+[e $ ! > . _cmdata 1 -> 5 `i 64  ]
+{
 "82
-[; ;testuart.c: 82:      RB5=0;
-[e = _RB5 -> -> 0 `i `b ]
-"85
-[; ;testuart.c: 85:   }
+[; ;testuart.c: 82:        cmdata.position=0;}
+[e = . _cmdata 1 -> 0 `i ]
 }
-[e :U 62 ]
+[e $U 65  ]
+"83
+[; ;testuart.c: 83:     else{
+[e :U 64 ]
+{
+"84
+[; ;testuart.c: 84:    cmdata.cmd[cmdata.position]=RCREG;
+[e = *U + &U . _cmdata 0 * -> -> . _cmdata 1 `ui `ux -> -> # *U &U . _cmdata 0 `ui `ux -> _RCREG `uc ]
 "86
-[; ;testuart.c: 86: }
-[e :UE 61 ]
+[; ;testuart.c: 86:    cmdata.position++;
+[e ++ . _cmdata 1 -> 1 `i ]
+"87
+[; ;testuart.c: 87:     }
+}
+[e :U 65 ]
+"89
+[; ;testuart.c: 89:   SendByteSerially(RCREG);
+[e ( _SendByteSerially (1 _RCREG ]
+"91
+[; ;testuart.c: 91:      RB5=0;
+[e = _RB5 -> -> 0 `i `b ]
+"94
+[; ;testuart.c: 94:   }
+}
+[e :U 63 ]
+"95
+[; ;testuart.c: 95: }
+[e :UE 62 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"91
-[; ;testuart.c: 91: void main(void) {
+"100
+[; ;testuart.c: 100: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"92
-[; ;testuart.c: 92:    TRISB=0;
+"101
+[; ;testuart.c: 101:    TRISB=0;
 [e = _TRISB -> -> 0 `i `uc ]
-"93
-[; ;testuart.c: 93:   InitUART();
-[e ( _InitUART ..  ]
-"94
-[; ;testuart.c: 94:    RB5=0;
-[e = _RB5 -> -> 0 `i `b ]
-"95
-[; ;testuart.c: 95:     GIE=1;
-[e = _GIE -> -> 1 `i `b ]
-"96
-[; ;testuart.c: 96:   PEIE=1;
-[e = _PEIE -> -> 1 `i `b ]
-"97
-[; ;testuart.c: 97:   SendString("XUY OS V 0.1.2\n");
-[e ( _SendString (1 :s 2C ]
-"98
-[; ;testuart.c: 98:  while( 1 )
-[e :U 66 ]
-"99
-[; ;testuart.c: 99:     {
-{
 "102
-[; ;testuart.c: 102:          _delay((unsigned long)((1000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;testuart.c: 102:   InitUART();
+[e ( _InitUART ..  ]
+"103
+[; ;testuart.c: 103:   cmdata.position=0;
+[e = . _cmdata 1 -> 0 `i ]
 "104
-[; ;testuart.c: 104:     SendByteSerially('S');
-[e ( _SendByteSerially (1 -> -> 83 `ui `uc ]
+[; ;testuart.c: 104:    RB5=0;
+[e = _RB5 -> -> 0 `i `b ]
+"105
+[; ;testuart.c: 105:     GIE=1;
+[e = _GIE -> -> 1 `i `b ]
 "106
-[; ;testuart.c: 106:     SendByteSerially('\n');
-[e ( _SendByteSerially (1 -> -> 10 `ui `uc ]
+[; ;testuart.c: 106:   PEIE=1;
+[e = _PEIE -> -> 1 `i `b ]
+"107
+[; ;testuart.c: 107:   SendString("XUY OS V 0.1.2\n");
+[e ( _SendString (1 :s 1C ]
 "108
-[; ;testuart.c: 108:      _delay((unsigned long)((1000)*(4000000/4000.0)));
+[; ;testuart.c: 108:  while( 1 )
+[e :U 68 ]
+"109
+[; ;testuart.c: 109:     {
+{
+"112
+[; ;testuart.c: 112:          _delay((unsigned long)((1000)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "113
-[; ;testuart.c: 113:     }
+[; ;testuart.c: 113:          if (cmdata.position==5)
+[e $ ! == . _cmdata 1 -> 5 `i 70  ]
+"114
+[; ;testuart.c: 114:             SendByteSerially('F');
+[e ( _SendByteSerially (1 -> -> 70 `ui `uc ]
+[e :U 70 ]
+"118
+[; ;testuart.c: 118:        SendString(cmdata.cmd);
+[e ( _SendString (1 &U . _cmdata 0 ]
+"119
+[; ;testuart.c: 119:         SendByteSerially('\n');
+[e ( _SendByteSerially (1 -> -> 10 `ui `uc ]
+"121
+[; ;testuart.c: 121:      _delay((unsigned long)((1000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"126
+[; ;testuart.c: 126:     }
 }
-[e :U 65 ]
-[e $U 66  ]
 [e :U 67 ]
-"115
-[; ;testuart.c: 115:     return;
-[e $UE 64  ]
-"116
-[; ;testuart.c: 116: }
-[e :UE 64 ]
+[e $U 68  ]
+[e :U 69 ]
+"128
+[; ;testuart.c: 128:     return;
+[e $UE 66  ]
+"129
+[; ;testuart.c: 129: }
+[e :UE 66 ]
 }
-[a 1C 112 97 108 97 118 105 107 0 ]
-[a 2C 88 85 89 32 79 83 32 86 32 48 46 49 46 50 10 0 ]
+[a 1C 88 85 89 32 79 83 32 86 32 48 46 49 46 50 10 0 ]
